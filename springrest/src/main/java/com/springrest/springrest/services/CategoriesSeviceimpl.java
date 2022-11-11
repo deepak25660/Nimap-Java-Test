@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -115,17 +116,20 @@ public class CategoriesSeviceimpl implements CategoriesService {
 	}
 
 	@Override
-	public void findAllWithpagination(int page, int size) {
-		
+	public List<Products> findAllWithpagination(int page, int size) {
 		// TODO Auto-generated method stub
-		Pageable pageable= PageRequest.of(page, size);
-		return  productDao.findAllWithpagination(pageable);
-		
+		Pageable paging=PageRequest.of(page, size);
+		Page<Products> pageResult = productDao.findAll(paging);
+		return pageResult.toList();
 		
 	}
-	
-	
 
+	
+	
+		
+		
+	
+	
 	
 
 }

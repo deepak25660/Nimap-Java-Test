@@ -1,6 +1,9 @@
 package com.springrest.springrest.services;
 
 import java.util.List;
+
+import org.springframework.data.domain.Page;
+
 import com.springrest.springrest.entity.Categories;
 import com.springrest.springrest.entity.Products;
 
@@ -19,5 +22,5 @@ public interface CategoriesService {
 	public Products addProduct(Products products);
 	public Products UpdateProduct(Products products,long productId);
 	public void deleteProduct(long parselong);
-	public void  findAllWithpagination(int page,int size);
+	public List<Products>  findAllWithpagination(int page,int size);
 }

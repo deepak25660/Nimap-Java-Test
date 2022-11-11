@@ -125,10 +125,11 @@ public class MyController {
 	  //pagination 
 	  @GetMapping("/api/products/page/{page}/{size}")
 	  
-		  public ResponseEntity<Page<Products>> findAllWithpagination(@PathVariable int page,@PathVariable int size)
+		  public List<Products> findAllWithpagination(@PathVariable int page,@PathVariable int size)
 		  {
 			  
-			  return new ResponseEntity<Page<Products>>(this.categorieService.findAllWithPagination(page,size),HttpStatus.OK); 		  
+			  	return this.categorieService.findAllWithpagination(page, size);
+			  	
 		  }
 }
 
