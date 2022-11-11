@@ -6,4 +6,6 @@ import com.springrest.springrest.entity.Products;
 
 public interface Productdao extends JpaRepository<Products,Long> {
 
+	
+
 }

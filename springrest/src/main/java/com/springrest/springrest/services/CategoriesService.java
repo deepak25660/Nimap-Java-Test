@@ -19,4 +19,5 @@ public interface CategoriesService {
 	public Products addProduct(Products products);
 	public Products UpdateProduct(Products products,long productId);
 	public void deleteProduct(long parselong);
+	public void  findAllWithpagination(int page,int size);
 }

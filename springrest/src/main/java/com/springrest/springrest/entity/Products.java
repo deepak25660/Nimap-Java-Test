@@ -2,6 +2,7 @@ package com.springrest.springrest.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Products {
@@ -10,6 +11,9 @@ public class Products {
 	private String categorgyname;
 	private String productname;
 	private long productprice;
+	@ManyToOne
+	private Categories categories;
+	
 	public Products(long id, String categorgyname, String productname, long productprice) {
 		super();
 		this.id = id;

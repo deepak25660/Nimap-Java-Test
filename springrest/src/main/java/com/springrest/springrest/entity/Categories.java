@@ -1,7 +1,10 @@
 package com.springrest.springrest.entity;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Categories {
@@ -10,6 +13,8 @@ public class Categories {
 	private long id;
 	
 	private String categorisename;
+	@OneToMany(mappedBy="categories")
+	private List<Products> products;
 
 	public Categories(long id, String categorisename) {
 		super();

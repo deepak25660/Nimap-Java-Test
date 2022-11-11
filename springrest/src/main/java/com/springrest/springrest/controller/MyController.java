@@ -4,6 +4,7 @@ package com.springrest.springrest.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -121,6 +122,17 @@ public class MyController {
 	  		
 	  	}
 	  
+	  //pagination 
+	  @GetMapping("/api/products/page/{page}/{size}")
+	  
+		  public ResponseEntity<Page<Products>> findAllWithpagination(@PathVariable int page,@PathVariable int size)
+		  {
+			  
+			  return new ResponseEntity<Page<Products>>(this.categorieService.findAllWithPagination(page,size),HttpStatus.OK); 		  
+		  }
 }
+
+
+
 
 
